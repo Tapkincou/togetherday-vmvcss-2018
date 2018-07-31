@@ -30,6 +30,7 @@ export class AppComponent {
   countDown;
   count;
   constructor(){
+    this.shuffleQuestionsReponses();
     this.count = 10;
 
     //called first time before the ngOnInit()
@@ -42,6 +43,13 @@ export class AppComponent {
         take(this.count),
         map(()=> Math.floor(--this.count / 60) + ':' + (this.count % 60))
         );
+  }
+
+  shuffleQuestionsReponses(){
+    this.questions = this.shuffle(this.questions);
+    this.questions.forEach(question => {
+      question.reponses = this.shuffle(question.reponses);
+    });
   }
 
   shuffle(a) {
