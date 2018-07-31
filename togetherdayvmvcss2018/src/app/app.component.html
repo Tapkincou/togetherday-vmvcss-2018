@@ -13,10 +13,10 @@
 
 <div >
   <ul>
-    <li *ngFor="let question of questions">
+    <li *ngFor="let question of shuffle(questions)">
         <h2>{{question.texte}}</h2>
       <ul>
-        <li *ngFor="let reponse of question.reponses">
+        <li *ngFor="let reponse of shuffle(question.reponses)">
           <mat-checkbox>{{reponse.texte}}</mat-checkbox>
         </li>
       </ul>
