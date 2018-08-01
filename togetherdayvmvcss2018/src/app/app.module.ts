@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatCheckboxModule} from '@angular/material';
+import {MatRadioModule} from '@angular/material';
 import { AppComponent } from './app.component';
 import {MatButtonModule} from '@angular/material/button';
 
@@ -12,7 +12,7 @@ import {MatButtonModule} from '@angular/material/button';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatCheckboxModule,
+    MatRadioModule,
     MatButtonModule,
   ],
   providers: [],
