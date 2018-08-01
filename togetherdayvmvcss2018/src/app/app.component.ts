@@ -68,6 +68,8 @@ export class AppComponent {
       ]
     }
   ];
+
+  showQuestions = false;
   title = 'app';
   countDown;
   count;
@@ -77,6 +79,14 @@ export class AppComponent {
 
     //called first time before the ngOnInit()
  }
+
+ begin(){
+
+  this.showQuestions =true;
+  this.goTimer();
+
+ }
+
   goTimer(){
     console.log('goTimer');
     this.countDown = 
