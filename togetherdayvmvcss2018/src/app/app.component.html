@@ -10,18 +10,18 @@
   </div>
 </div>
 <div *ngIf="count == 0">FIn du game</div>
-<h2>Here are some li nks to help you start: </h2>
 
-<div *ngIf="showQuestions" >
-  <ul>
-    <li *ngFor="let question of questions">
-        <h2>{{question.texte}}</h2>
-      <ul>
-        <li *ngFor="let reponse of question.reponses">
-          <mat-radio-button>{{reponse.texte}}</mat-radio-button>
-        </li>
-      </ul>
+
+<div class="quizz" *ngIf="showQuestions" >
+  <div class="questions">
+      <h2>{{questions[currentIndex].texte}}</h2>
+  </div>
+  <ul class="reponses">
+    <li *ngFor="let reponse of questions[currentIndex].reponses">
+      <mat-radio-button>{{reponse.texte}}</mat-radio-button>
     </li>
-
   </ul>
+
+  <button class="next-btn" (click)="increaseIndex()" mat-raised-button >Question suivante</button>
+
 </div>

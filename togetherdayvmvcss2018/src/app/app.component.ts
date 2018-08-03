@@ -69,14 +69,15 @@ export class AppComponent {
     }
   ];
 
+  currentIndex;
   showQuestions = false;
   title = 'app';
   countDown;
   count;
   constructor(){
     this.shuffleQuestionsReponses();
-    this.count = 10;
-
+    this.count = 1;
+    this.currentIndex = 0;
     //called first time before the ngOnInit()
  }
 
@@ -85,6 +86,15 @@ export class AppComponent {
   this.showQuestions =true;
   this.goTimer();
 
+ }
+
+end(){
+
+}
+
+ increaseIndex(){
+  console.log( this.currentIndex);
+  this.currentIndex < this.questions.length ? this.currentIndex++ : this.end();
  }
 
   goTimer(){

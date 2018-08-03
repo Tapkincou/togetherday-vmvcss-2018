@@ -1,4 +1,3 @@
-// @import "~@angular/material/prebuilt-themes/purple-green.css";
 
 div{
     // color: green;
@@ -6,4 +5,35 @@ div{
 .btn{
     width: 200px;
     height: 50px;
+}
+
+.quizz {
+
+    overflow: hidden;
+    margin: 0px 100px 0px 100px;
+
+    .questions {
+        float: left;
+        width: 600px;
+        h2 {
+            margin-bottom: 100px;
+        }
+    }
+
+
+    .reponses {
+       // float: left;
+        width: 600px;
+        li{
+            list-style:none;
+            margin :0px 0px 20px 0px;
+            padding-left:0;
+
+        }
+
+    }
+
+    .next-btn {
+       //  margin: 300px;
+    }
 }
