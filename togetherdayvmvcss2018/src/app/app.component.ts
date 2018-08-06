@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { timer } from 'rxjs'; 
+import { timer, Observable, BehaviorSubject } from 'rxjs'; 
 import { take, map } from 'rxjs/operators';
+import { stringify } from 'querystring';
 
 
 @Component({
@@ -69,42 +70,65 @@ export class AppComponent {
     }
   ];
 
-  currentIndex;
-  showQuestions = false;
-  title = 'app';
-  countDown;
-  count;
+  public currentIndex;
+  public showQuestions = false;
+  public title = 'app';
+  public countDown;
+  public countStartValue;
+  public count;
+  public count$;
+  public showButton;
+
   constructor(){
     this.shuffleQuestionsReponses();
-    this.count = 1;
     this.currentIndex = 0;
-    //called first time before the ngOnInit()
+    this.showButton = true;
+    this.countStartValue = 1*10;
+    this.count = new BehaviorSubject<number>(this.countStartValue);
+    this.count$ = this.count.asObservable();
+    let subscription = this.count$.subscribe(c => {
+      if (c == 0) {this.end()};
+  });
+
  }
 
  begin(){
-
+  this.showButton = false;
   this.showQuestions =true;
-  this.goTimer();
+  //this.goTimer();
 
  }
 
-end(){
+ end(){
+    console.log("end");
+    this.showQuestions = false;
+ }
 
+ openBox(){
+  console.log("openBox");
+  this.showQuestions = false;
 }
 
  increaseIndex(){
-  console.log( this.currentIndex);
-  this.currentIndex < this.questions.length ? this.currentIndex++ : this.end();
- }
+  console.log( this.currentIndex + "/" + String(this.questions.length-1)); 
+  this.currentIndex < this.questions.length-1 ? this.currentIndex++ : this.openBox();
+
+
+}
+
+counterNextValue(){
+  this.count.next(this.count.getValue()-1);
+  return this.count.getValue();
+}
 
   goTimer(){
     console.log('goTimer');
     this.countDown = 
       timer(0,1000)
         .pipe(
-        take(this.count),
-        map(()=> Math.floor(--this.count / 60) + ':' + (this.count % 60))
-        );
+        take(this.count.getValue()),
+        map(()=> Math.floor(this.counterNextValue() / 60) + ':' + (this.count.getValue() % 60)
+        ));
   }
 
   shuffleQuestionsReponses(){
