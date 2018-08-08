@@ -3,7 +3,6 @@ import { timer, Observable, BehaviorSubject } from 'rxjs';
 import { take, map } from 'rxjs/operators';
 import { stringify } from 'querystring';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,9 +13,9 @@ export class AppComponent {
   [
     {texte: "Vous êtes bloqué sur le projet, que faites-vous ?",
       reponses: [
-        {texte:"Je cherche tout seul jusqu'à ce que je trouve", correcte:false},
-        {texte:"Je demande de l'aide à mes co-équipiers puis j'alerte si nécessaire", correcte:true},  
-        {texte:"Je demande conseille au client", correcte:false},
+        {id:0,texte:"Je cherche tout seul jusqu'à ce que je trouve", correcte:false, icone:"coffee"},
+        {id:1,texte:"Je demande de l'aide à mes co-équipiers puis j'alerte si nécessaire", correcte:true, icone:"umbrella"},  
+        {id:2,texte:"Je demande conseille au client", correcte:false, icone:"wrench"},
       ]
     },
     {texte: "Les spécifications sont incomplètes.. ou ambiguës",
@@ -78,6 +77,10 @@ export class AppComponent {
   public count;
   public count$;
   public showButton;
+  public idsList=[0,1,2];
+  //map
+  public iconsList=["coffee","wrench","umbrella"];
+
 
   constructor(){
     this.shuffleQuestionsReponses();

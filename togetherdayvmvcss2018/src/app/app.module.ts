@@ -4,6 +4,14 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatRadioModule} from '@angular/material';
 import { AppComponent } from './app.component';
 import {MatButtonModule} from '@angular/material/button';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faCoffee, faUmbrella, faWrench } from '@fortawesome/free-solid-svg-icons';
+
+// Add an icon to the library for convenient access in other components
+library.add(faCoffee);
+library.add(faUmbrella);
+library.add(faWrench);
 
 @NgModule({
   declarations: [
@@ -14,6 +22,7 @@ import {MatButtonModule} from '@angular/material/button';
     BrowserAnimationsModule,
     MatRadioModule,
     MatButtonModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
