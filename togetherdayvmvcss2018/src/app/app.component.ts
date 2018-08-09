@@ -20,16 +20,16 @@ export class AppComponent {
     },
     {texte: "Les spécifications sont incomplètes.. ou ambiguës",
       reponses: [
-        {texte:"Vous demandez au Business Analyst", correcte:true},
-        {texte:"Vous passez à une autre exigence mieux spécifiée pour ne pas être bloqué", correcte:false},  
-        {texte:"Je demande conseille au client", correcte:false},
+        {id:3,texte:"Vous demandez au Business Analyst", correcte:true},
+        {id:4,texte:"Vous passez à une autre exigence mieux spécifiée pour ne pas être bloqué", correcte:false},  
+        {id:5,texte:"Je demande conseille au client", correcte:false},
       ]
     },
     {texte: "Votre code compile",
       reponses: [
-        {texte:"Vous le mettez dans le Repository et faite un COMMIT des sources", correcte:false},
-        {texte:"Je fais mes tests unitaires, puis je synchronise mon environnement, avant de faire un COMMIT de mes sources", correcte:true},  
-        {texte:"Je passe au codage de l'exigence suivante", correcte:false},
+        {id:6,texte:"Vous le mettez dans le Repository et faite un COMMIT des sources", correcte:false},
+        {id:7,texte:"Je fais mes tests unitaires, puis je synchronise mon environnement, avant de faire un COMMIT de mes sources", correcte:true},  
+        {id:8,texte:"Je passe au codage de l'exigence suivante", correcte:false},
       ]
     },
     {texte: "L'intégration continue est plantée ! Que faire ?",
@@ -77,9 +77,12 @@ export class AppComponent {
   public count;
   public count$;
   public showButton;
-  public idsList=[0,1,2];
+  public idsList=[0,1,2,3,4,5,6,7,8,9];
   //map
-  public iconsList=["coffee","wrench","umbrella"];
+  public iconsList=["coffee","wrench","umbrella",
+                    "hand-spock", "futbol", "feather",
+                    "fish", "grin-tongue-wink", "car-side"
+                  ,"cut","code-branch", "fire-extinguisher"];
 
 
   constructor(){

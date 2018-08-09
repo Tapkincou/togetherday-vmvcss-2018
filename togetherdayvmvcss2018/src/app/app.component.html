@@ -10,7 +10,6 @@
   </div>
 </div>
 
-<fa-icon [icon]="['fas', 'coffee']" size="6x"></fa-icon>
 <div class="TimesUp" *ngIf="count.getValue() ==  0">FIn du game
   
 </div>
@@ -22,7 +21,7 @@
   </div>
   <ul class="reponses">
     <li *ngFor="let reponse of questions[currentIndex].reponses">
-      <fa-icon [icon]="['fas', iconsList[idsList[reponse.id]]]" size="xs"></fa-icon><mat-radio-button>{{reponse.texte}}</mat-radio-button>
+      <fa-icon [icon]="['fas', iconsList[idsList[reponse.id]]]" size="3x"></fa-icon><mat-radio-button>{{reponse.texte}}</mat-radio-button>
     </li>
   </ul>
 
