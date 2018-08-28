@@ -1,4 +1,3 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1 *ngIf="count == 0">
     Welcome to {{ title }}! {{count}}
@@ -21,10 +20,11 @@
   </div>
   <ul class="reponses">
     <li *ngFor="let reponse of questions[currentIndex].reponses">
-      <fa-icon [icon]="['fas', iconsList[idsList[reponse.id]]]" size="3x"></fa-icon><mat-radio-button>{{reponse.texte}}</mat-radio-button>
+       <div>
+          <fa-icon class="icone" [icon]="['fas', iconsList[reponse.id]]" size="xs"></fa-icon>
+          <span>{{reponse.texte}}</span>
+      </div>
     </li>
   </ul>
-
   <button class="next-btn" (click)="increaseIndex()" mat-raised-button >Question suivante</button>
-
 </div>

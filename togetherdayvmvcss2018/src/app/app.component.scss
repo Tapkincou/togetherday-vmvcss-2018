@@ -9,35 +9,50 @@ div{
 
 .quizz {
 
-    overflow: hidden;
-    margin: 0px 100px 0px 100px;
+  //  overflow: hidden;
+   // margin: 0px 100px 0px 100px;
 
     .questions {
-        float: left;
-        width: 600px;
+     //   float: left;
+        
         h2 {
-            margin-bottom: 100px;
+            margin-bottom: 30px;
         }
     }
 
 
     .reponses {
+
+     //  display: flex;
        // float: left;
-        width: 600px;
-        li{
-            list-style:none;
-            margin :0px 0px 20px 0px;
-            padding-left:0;
+     //   width: 400px;
 
-        }
+     //       float: left;
+            li{
+                list-style: none;
+                margin: 0px 0px 20px 0px;
+               /* padding-left:0;
+                flex: 1 0;
+                flex-direction: column;
+                // float: right;*/
 
+                .icone {
+                    color: #628452;
+                    margin: 0px 0px 0px 0px;
+                    // flex: 1 0;
+                    // flex-direction: column;
+                   // float: left;
+                  //  margin-right: 20px;
+                }
+
+                mat-radio-button{
+
+
+                }
+            }
     }
 
     .next-btn {
        //  margin: 300px;
     }
-
-    fa-icon {
-        color: #628452
-    }    
 }
