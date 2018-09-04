@@ -35,37 +35,37 @@ export class AppComponent {
     },
     {texte: 'L\'intégration continue est plantée ! Que faire ?',
       reponses: [
-        {texte: 'Consulter le rapport de bugs', correcte: true},
-        {texte: 'Alerter le client', correcte: false},
-        {texte: 'Chercher dans le code', correcte: false},
+        {id: 9, texte: 'Consulter le rapport de bugs', correcte: true},
+        {id: 10, texte: 'Alerter le client', correcte: false},
+        {id: 11, texte: 'Chercher dans le code', correcte: false},
       ]
     },
     {texte: 'Qu\'est-ce qui nous permet de valider l\'architecture technique mise en place ?',
       reponses: [
-        {texte: 'Elle correspond à la demande et au contexte client.', correcte: false},
-        {texte: 'Elle est fonctionnelle et éprouvée via un POC (proof of concept).', correcte: true},
-        {texte: 'Elle est écrite exhaustivement sur un document de spécifications techniques.', correcte: false},
+        {id: 12, texte: 'Elle correspond à la demande et au contexte client.', correcte: false},
+        {id: 13, texte: 'Elle est fonctionnelle et éprouvée via un POC (proof of concept).', correcte: true},
+        {id: 14, texte: 'Elle est écrite exhaustivement sur un document de spécifications techniques.', correcte: false},
       ]
     },
     {texte: 'Qu\'est-ce qui nous permet de valider l\'architecture technique mise en place ?',
       reponses: [
-        {texte: 'Elle correspond à la demande et au contexte client.', correcte: false},
-        {texte: 'Elle est fonctionnelle et éprouvée via un POC (proof of concept).', correcte: true},
-        {texte: 'Elle est écrite exhaustivement sur un document de spécifications techniques.', correcte: false},
+        {id: 15, texte: 'Elle correspond à la demande et au contexte client.', correcte: false},
+        {id: 16, texte: 'Elle est fonctionnelle et éprouvée via un POC (proof of concept).', correcte: true},
+        {id: 17, texte: 'Elle est écrite exhaustivement sur un document de spécifications techniques.', correcte: false},
       ]
     },
     {texte: 'Le client vous appelle pour vous demander un petit changement qui n\'était pas prévu',
       reponses: [
-        {texte: 'Pour conserver un bon contact avec le client, vous lui faite la modif.', correcte: false},
-        {texte: 'Vous écoutez le client sans vous engager et vous demandez l\'avis du chef de projet.', correcte: true},
-        {texte: 'Vous raccrochez directement.', correcte: false},
+        {id: 18, texte: 'Pour conserver un bon contact avec le client, vous lui faite la modif.', correcte: false},
+        {id: 19, texte: 'Vous écoutez le client sans vous engager et vous demandez l\'avis du chef de projet.', correcte: true},
+        {id: 20, texte: 'Vous raccrochez directement.', correcte: false},
       ]
     },
     {texte: 'Qu\'est-ce qu\'une exigence ?',
       reponses: [
-        {texte: 'La description du besoin du client .', correcte: true},
-        {texte: 'Les règles d\'architecture de la solution informatique.', correcte: false},
-        {texte: 'Le périmètre du projet.', correcte: false},
+        {id: 21, texte: 'La description du besoin du client .', correcte: true},
+        {id: 22, texte: 'Les règles d\'architecture de la solution informatique.', correcte: false},
+        {id: 23, texte: 'Le périmètre du projet.', correcte: false},
       ]
     }
   ];
@@ -78,14 +78,15 @@ export class AppComponent {
   public count;
   public count$;
   public showButton;
-  public iconsList = ['coffee', 'wrench', 'umbrella',
-                    'hand-spock', 'futbol', 'feather',
-                    'fish', 'grin-tongue-wink', 'car-side',
-                    'cut', 'code-branch', 'fire-extinguisher',
-                    'key', 'heart', 'fire', 'paw',
-                    'spoon', 'shower', 'rebel',
-                    'bicycle', 'bluetooth-b', 'bomb',
-                    'bug'];
+  public iconsList = [
+  'umbrella', 'coffee', 'wrench',
+  'hand-spock', 'feather', 'futbol',
+  'fish', 'grin-tongue-wink', 'cut',
+  'code-branch', 'fire-extinguisher', 'key',
+  'heart', 'fire', 'paw',
+  'thermometer', 'shower', 'utensil-spoon',
+  'camera', 'music', 'rocket',
+  'trophy', 'truck', 'concierge-bell'];
 
 
   constructor() {
@@ -146,7 +147,9 @@ counterNextValue() {
       question.reponses = this.shuffle(question.reponses);
     });
 
+    console.log(this.iconsList);
     this.shuffle(this.iconsList);
+    console.log(this.iconsList);
   }
 
   shuffle(a) {

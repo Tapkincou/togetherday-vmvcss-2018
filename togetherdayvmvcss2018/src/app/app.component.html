@@ -21,7 +21,8 @@
   <ul class="reponses">
     <li *ngFor="let reponse of questions[currentIndex].reponses">
        <div>
-          <fa-icon class="icone" [icon]="['fas', iconsList[reponse.id]]" size="xs"></fa-icon>
+          <fa-icon class="icone" [icon]="['fas', iconsList[reponse.id]]" size="xs"></fa-icon><!--iconsList[reponse.id]]-->
+          {{reponse.id}}
           <span>{{reponse.texte}}</span>
       </div>
     </li>

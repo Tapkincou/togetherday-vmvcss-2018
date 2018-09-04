@@ -31,9 +31,15 @@ library.add(icons.faKey);
 library.add(icons.faHeart);
 library.add(icons.faFire);
 library.add(icons.faPaw);
-// library.add(icons.faSpoon);
+library.add(icons.faThermometer);
 library.add(icons.faShower);
-// library.add(icons.faRebel);
+library.add(icons.faUtensilSpoon);
+library.add(icons.faCamera);
+library.add(icons.faMusic);
+library.add(icons.faRocket);
+library.add(icons.faTrophy);
+library.add(icons.faTruck);
+library.add(icons.faConciergeBell);
 
 @NgModule({
   declarations: [
