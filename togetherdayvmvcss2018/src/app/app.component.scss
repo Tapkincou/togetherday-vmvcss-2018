@@ -52,6 +52,17 @@ div{
             }
     }
 
+    .cadenas  {
+        display: flex;
+        width: 800px;
+        margin-right: 20px;
+
+        .choix  {
+            flex: 1 0;
+            flex-direction: column;
+        }
+    }
+
     .next-btn {
        //  margin: 300px;
     }
