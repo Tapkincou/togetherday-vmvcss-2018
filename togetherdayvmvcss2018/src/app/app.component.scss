@@ -37,13 +37,15 @@ div{
                 // float: right;*/
 
                 .icone {
-                    color: #628452;
+                    //color: #628452;
                     margin: 0px 0px 0px 0px;
                     // flex: 1 0;
                     // flex-direction: column;
                    // float: left;
                   //  margin-right: 20px;
                 }
+
+
 
                 mat-radio-button{
 
@@ -60,6 +62,11 @@ div{
         .choix  {
             flex: 1 0;
             flex-direction: column;
+        }
+
+        .icone-selected {
+            background-color: green;
+
         }
     }
 

@@ -30,7 +30,7 @@
 </div>
 
 <div class="cadenas">
-  <div *ngFor="let icon of iconsList" class="choix" (click)="unlock(icon)">
+  <div *ngFor="let icon of iconsList" [ngClass]="choix"  (click)=icone-selected id="{{icon}}" (click)="unlock(icon)">
       <fa-icon [icon]="['fas', icon]" size="3x" ></fa-icon>
   </div>
 </div>
