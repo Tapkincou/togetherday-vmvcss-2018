@@ -11,21 +11,27 @@ import { stringify } from 'querystring';
 export class AppComponent {
   questions =
   [
-    {texte: 'Vous êtes bloqué sur le projet, que faites-vous ?',
+    {
+      id: 0,
+      texte: 'Vous êtes bloqué sur le projet, que faites-vous ?',
       reponses: [
         {id: 0 , texte: 'Je cherche tout seul \'à ce que je trouve', correcte: false, icone: 'coffee'},
         {id: 1 , texte: 'Je demande de l\'aide à mes co-équipiers puis j\'alerte si nécessaire', correcte: true, icone: 'umbrella'},
         {id: 2 , texte: 'Je demande conseille au client', correcte: false, icone: 'wrench'},
       ]
     },
-    {texte: 'Les spécifications sont incomplètes.. ou ambiguës',
+    {
+      id: 1,
+      texte: 'Les spécifications sont incomplètes.. ou ambiguës',
       reponses: [
         {id: 3, texte: 'Vous demandez au Business Analyst', correcte: true},
         {id: 4, texte: 'Vous passez à une autre exigence mieux spécifiée pour ne pas être bloqué', correcte: false},
         {id: 5, texte: 'Je demande conseille au client', correcte: false},
       ]
     },
-    {texte: 'Votre code compile',
+    {
+      id: 2,
+      texte: 'Votre code compile',
       reponses: [
         {id: 6, texte: 'Vous le mettez dans le Repository et faite un COMMIT des sources', correcte: false},
         {id: 7,
@@ -34,35 +40,45 @@ export class AppComponent {
         {id: 8, texte: 'Je passe au codage de l\'exigence suivante', correcte: false},
       ]
     },
-    {texte: 'L\'intégration continue est plantée ! Que faire ?',
+    {
+      id: 3,
+      texte: 'L\'intégration continue est plantée ! Que faire ?',
       reponses: [
         {id: 9, texte: 'Consulter le rapport de bugs', correcte: true},
         {id: 10, texte: 'Alerter le client', correcte: false},
         {id: 11, texte: 'Chercher dans le code', correcte: false},
       ]
     },
-    {texte: 'Qu\'est-ce qui nous permet de valider l\'architecture technique mise en place ?',
+    {
+      id: 4,
+      texte: 'Qu\'est-ce qui nous permet de valider l\'architecture technique mise en place ?',
       reponses: [
         {id: 12, texte: 'Elle correspond à la demande et au contexte client.', correcte: false},
         {id: 13, texte: 'Elle est fonctionnelle et éprouvée via un POC (proof of concept).', correcte: true},
         {id: 14, texte: 'Elle est écrite exhaustivement sur un document de spécifications techniques.', correcte: false},
       ]
     },
-    {texte: 'Qu\'est-ce qui nous permet de valider l\'architecture technique mise en place ?',
+    {
+      id: 5,
+      texte: 'Qu\'est-ce qui nous permet de valider l\'architecture technique mise en place ?',
       reponses: [
         {id: 15, texte: 'Elle correspond à la demande et au contexte client.', correcte: false},
         {id: 16, texte: 'Elle est fonctionnelle et éprouvée via un POC (proof of concept).', correcte: true},
         {id: 17, texte: 'Elle est écrite exhaustivement sur un document de spécifications techniques.', correcte: false},
       ]
     },
-    {texte: 'Le client vous appelle pour vous demander un petit changement qui n\'était pas prévu',
+    {
+      id: 6,
+      texte: 'Le client vous appelle pour vous demander un petit changement qui n\'était pas prévu',
       reponses: [
         {id: 18, texte: 'Pour conserver un bon contact avec le client, vous lui faite la modif.', correcte: false},
         {id: 19, texte: 'Vous écoutez le client sans vous engager et vous demandez l\'avis du chef de projet.', correcte: true},
         {id: 20, texte: 'Vous raccrochez directement.', correcte: false},
       ]
     },
-    {texte: 'Qu\'est-ce qu\'une exigence ?',
+    {
+      id: 7,
+      texte: 'Qu\'est-ce qu\'une exigence ?',
       reponses: [
         {id: 21, texte: 'La description du besoin du client .', correcte: true},
         {id: 22, texte: 'Les règles d\'architecture de la solution informatique.', correcte: false},
@@ -70,7 +86,9 @@ export class AppComponent {
       ]
     }
   ];
-
+  public bonnesReponses = [];
+  public bonnesReponsesOrdreInitial = [1, 2, 7, 9, 13, 16, 19, 21];
+  public iconeSelected = false;
   public currentIndex;
   public showQuestions = false;
   public title = 'app';
@@ -96,7 +114,7 @@ export class AppComponent {
     this.count = new BehaviorSubject<number>(this.countStartValue);
     this.count$ = this.count.asObservable();
     let subscription = this.count$.subscribe(c => {
-      if ( c === 0) {this.end()};
+      if ( c === 0) { this.end() };
   });
 
  }
@@ -141,11 +159,15 @@ counterNextValue() {
   }
 
   shuffleQuestionsReponses() {
+    this.bonnesReponses = [];
     this.questions = this.shuffle(this.questions);
     this.questions.forEach(question => {
       question.reponses = this.shuffle(question.reponses);
+      this.bonnesReponses.push(this.bonnesReponsesOrdreInitial[question.id]);
     });
     this.shuffle(this.iconsList);
+    console.log(this.bonnesReponses);
+
   }
 
   shuffle(a) {
@@ -158,7 +180,7 @@ counterNextValue() {
 
   unlock(key) {
     console.log(key);
-    
+    this.iconeSelected = true;
   }
 
 }

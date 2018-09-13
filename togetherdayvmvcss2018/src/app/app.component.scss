@@ -54,23 +54,26 @@ div{
             }
     }
 
-    .cadenas  {
-        display: flex;
-        width: 800px;
-        margin-right: 20px;
 
-        .choix  {
-            flex: 1 0;
-            flex-direction: column;
-        }
-
-        .icone-selected {
-            background-color: green;
-
-        }
-    }
 
     .next-btn {
        //  margin: 300px;
+    }
+}
+
+.cadenas  {
+    display: flex;
+    width: 800px;
+    margin-right: 20px;
+
+    .choix  {
+        flex: 1 0;
+        flex-direction: column;
+        width: 20px;
+    }
+
+    .icone-selected {
+        background-color: green;
+
     }
 }
