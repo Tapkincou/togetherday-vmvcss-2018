@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 import { timer, Observable, BehaviorSubject } from 'rxjs';
 import { take, map } from 'rxjs/operators';
 import { stringify } from 'querystring';
@@ -86,6 +86,10 @@ export class AppComponent {
       ]
     }
   ];
+
+  public selectedIcons = Array(7);
+  public combinaison = 0;
+  public reponsesPropose = [];
   public bonnesReponses = [];
   public bonnesReponsesOrdreInitial = [1, 2, 7, 9, 13, 16, 19, 21];
   public iconeSelected = false;
@@ -106,7 +110,7 @@ export class AppComponent {
                       'cut', 'code-branch', 'fire-extinguisher', 'futbol'];
 
 
-  constructor(){
+  constructor() {
     this.shuffleQuestionsReponses();
     this.currentIndex = 0;
     this.showButton = true;
@@ -178,9 +182,29 @@ counterNextValue() {
     return a;
   }
 
-  unlock(key) {
-    console.log(key);
+  unlock(icone, id) {
+    console.log(icone);
     this.iconeSelected = true;
+
+
+    this.selectedIcons[this.combinaison] = icone;
+    this.reponsesPropose.push(id);
+    if (this.combinaison < 7) {
+      this.combinaison ++;
+
+    } else {
+      // icon dans le resultat entree puis comparer avec la reponse
+      console.log(this.reponsesPropose + ' ' + this.bonnesReponses);
+      if (this.reponsesPropose.toString() === this.bonnesReponses.toString()) {
+        console.log('gagne');
+
+      } else {
+       console.log('perdu');
+      }
+
+    }
+
+    console.log(this.combinaison);
   }
 
 }
