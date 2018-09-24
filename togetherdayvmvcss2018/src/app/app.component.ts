@@ -87,14 +87,15 @@ export class AppComponent {
     }
   ];
 
-  public selectedIcons = Array(7);
-  public combinaison = 0;
+  public selectedIcons;
+  public combinaison;
   public reponsesPropose = [];
   public bonnesReponses = [];
   public bonnesReponsesOrdreInitial = [1, 2, 7, 9, 13, 16, 19, 21];
   public iconeSelected = false;
   public currentIndex;
   public showQuestions = false;
+  public showReponses = false;
   public title = 'app';
   public countDown;
   public countStartValue;
@@ -112,9 +113,8 @@ export class AppComponent {
 
   constructor() {
     this.shuffleQuestionsReponses();
-    this.currentIndex = 0;
     this.showButton = true;
-    this.countStartValue = 1 * 10;
+    this.countStartValue = 1 * 20;
     this.count = new BehaviorSubject<number>(this.countStartValue);
     this.count$ = this.count.asObservable();
     let subscription = this.count$.subscribe(c => {
@@ -123,21 +123,30 @@ export class AppComponent {
 
  }
 
- begin() {
+ begin(withTimer = false) {
+  this.combinaison = 0;
+  this.selectedIcons = new Array(7);
+  this.currentIndex = 0;
   this.showButton = false;
   this.showQuestions = true;
-  // this.goTimer();
+  this.showReponses = false;
+  if ( withTimer === true) {
+    this.goTimer();
+  }
 
  }
 
  end() {
     console.log('end');
     this.showQuestions = false;
+    this.showReponses = false;
+    alert('perdu');
  }
 
  openBox() {
   console.log('openBox');
   this.showQuestions = false;
+  this.showReponses = true;
 }
 
  increaseIndex() {
@@ -199,7 +208,9 @@ counterNextValue() {
         console.log('gagne');
 
       } else {
-       console.log('perdu');
+        console.log('perdu');
+        this.shuffleQuestionsReponses();
+        this.begin();
       }
 
     }

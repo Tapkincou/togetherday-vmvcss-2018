@@ -3,10 +3,9 @@
   <h1 *ngIf="count == 0">
     Welcome to {{ title }}! {{count}}
   </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
   <h2>{{countDown | async}}</h2>
   <div *ngIf="showButton" >
-    <button  mat-raised-button (click)="begin()">Commencer</button>
+    <button  mat-raised-button (click)="begin(true)">Commencer</button>
   </div>
 </div>
 
@@ -21,7 +20,7 @@
   </div>
   <ul class="reponses">
     <li *ngFor="let reponse of questions[currentIndex].reponses">
-      <fa-icon [icon]="['fas', iconsList[reponse.id]]" size="3x"></fa-icon><mat-radio-button>{{reponse.texte}}</mat-radio-button>
+      <fa-icon [icon]="['fas', iconsList[reponse.id]]" size="3x"></fa-icon><span>{{reponse.texte}}</span>
     </li>
   </ul>
 
@@ -29,32 +28,15 @@
 
 </div>
 
-<div class="cadenas">
+<div class="cadenas" *ngIf="showReponses"> 
   <div *ngFor="let icon of iconsList; let id = index" class="choix" id="{{icon}}" (click)="unlock(icon, id)">
       <fa-icon [icon]="['fas', icon]" size="3x" ></fa-icon>
   </div>
 </div>
 
-<div class="cadenas">
+<div class="cadenas" *ngIf="showReponses">
   <div *ngFor="let entryNb of selectedIcons.keys()" id="entree{{entryNb}}">
       <fa-icon [icon]="['fas', this.selectedIcons[entryNb]]" size="3x" ></fa-icon>
   </div>
-  <!--<div id="entree1">
-    <fa-icon [icon]="" size="3x" ></fa-icon>
-  </div>
-  <div id="entree2">
-    <fa-icon [icon]="" size="3x" ></fa-icon>
-  </div>
-  <div id="entree3">
-    <fa-icon [icon]="" size="3x" ></fa-icon>
- </div>
-  <div id="entree4">
-    <fa-icon [icon]="" size="3x" ></fa-icon>
-  </div>
-  <div id="entree5">
-    <fa-icon [icon]="" size="3x" ></fa-icon>
-  </div>
-  <div id="entree6">
-    <fa-icon [icon]="" size="3x" ></fa-icon>
-  </div>-->
+
 </div>
