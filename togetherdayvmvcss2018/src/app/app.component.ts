@@ -87,6 +87,7 @@ export class AppComponent {
     }
   ];
 
+  public isVictoire = false;
   public selectedIcons;
   public combinaison;
   public reponsesPropose = [];
@@ -140,7 +141,6 @@ export class AppComponent {
     console.log('end');
     this.showQuestions = false;
     this.showReponses = false;
-    alert('perdu');
  }
 
  openBox() {
@@ -206,6 +206,7 @@ counterNextValue() {
       console.log(this.reponsesPropose + ' ' + this.bonnesReponses);
       if (this.reponsesPropose.toString() === this.bonnesReponses.toString()) {
         console.log('gagne');
+        this.isVictoire = true;
 
       } else {
         console.log('perdu');

@@ -1,18 +1,34 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1 *ngIf="count == 0">
-    Welcome to {{ title }}! {{count}}
-  </h1>
+<div id="intitule">
+  Répond aux questions mec !
+  <img width="300" class="imgcoffre" src="{{images/coffre_ferme.jpg}}" >
+</div>
+
+
+<div style="text-align:center" *ngIf="!isVictoire">
+
   <h2>{{countDown | async}}</h2>
   <div *ngIf="showButton" >
     <button  mat-raised-button (click)="begin(true)">Commencer</button>
   </div>
 </div>
 
-<div class="TimesUp" *ngIf="count.getValue() ==  0">FIn du game
-  
+<div class="TimesUp" *ngIf="count.getValue() ==  0">
+
+T'as perdu !
+
+
+
 </div>
 
+
+<div class="victoire" *ngIf="isVictoire">
+
+    T'as gagné !
+    
+    
+    
+    </div>
 
 <div class="quizz" *ngIf="showQuestions" >
   <div class="questions">
