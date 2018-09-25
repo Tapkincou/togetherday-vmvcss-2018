@@ -103,13 +103,13 @@ export class AppComponent {
   public count;
   public count$;
   public showButton;
-  public iconsList = ['coffee', 'wrench', 'umbrella',
-                      'coffee', 'wrench', 'umbrella',
-                      'coffee', 'wrench', 'umbrella',
-                      'coffee', 'wrench', 'hand-spock', 'futbol', 'feather',
+  public iconsList = ['coffee', 'music', 'fire',
+                      'key', 'camera', 'truck',
+                      'thermometer', 'utensil-spoon', 'umbrella',
+                      'trophy', 'wrench', 'hand-spock', 'heart', 'rocket',
                       'hand-spock', 'futbol', 'feather',
-                      'fish', 'grin-tongue-wink', 'feather',
-                      'cut', 'code-branch', 'fire-extinguisher', 'futbol'];
+                      'fish', 'grin-tongue-wink', 'shower',
+                      'cut', 'code-branch', 'fire-extinguisher', 'concierge-bell'];
 
 
   constructor() {
