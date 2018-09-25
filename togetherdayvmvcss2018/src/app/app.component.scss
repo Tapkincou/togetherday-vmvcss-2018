@@ -84,5 +84,25 @@ div{
 
 #intitule {
     text-align: center;
+    margin-left: auto ;
+    margin-right: auto ;
 
+    width: 500px;
+    p{
+        margin-bottom: 20px;
+    }
+    div {
+        width: 500px;
+        margin-left: auto ;
+        margin-right: auto ;
+
+
+    }
+    margin-top: 50px;
+
+}
+
+fa-icon{
+    color: red;
+    margin-left: 10px;
 }

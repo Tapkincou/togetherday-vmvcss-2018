@@ -1,6 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div id="intitule">
-  Répond aux questions mec !
+  <div>
+  <p>Afin de savoir si vous êtes à la hauteur de la tâche, nous avons caché les
+  spécifications du projet dans un coffre.</p>
+  <p>Trouvez les réponses aux questions posées et prouvez que vous êtes digne des Avengers !</p>
+  <p>La force seule ne sert à rien sans la connaissance et la mémoire ;)</p>
+  </div>
   <img width="300" class="imgcoffre" src="{{images/coffre_ferme.jpg}}" >
 </div>
 
@@ -36,7 +41,7 @@ T'as perdu !
   </div>
   <ul class="reponses">
     <li *ngFor="let reponse of questions[currentIndex].reponses">
-      <fa-icon [icon]="['fas', iconsList[reponse.id]]" size="3x"></fa-icon><span>{{reponse.texte}}</span>
+      <fa-icon [icon]="['fas', iconsList[reponse.id]]" size="3x"></fa-icon><div>{{reponse.texte}}</div>
     </li>
   </ul>
 
