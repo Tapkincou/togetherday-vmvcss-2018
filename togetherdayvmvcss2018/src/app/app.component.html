@@ -19,10 +19,8 @@
 </div>
 
 <div class="TimesUp" *ngIf="count.getValue() ==  0">
-
-T'as perdu !
-
-
+    Ah! vous n'avez pas réussi avant la fin du chrono, c'est vraiment dommage :(
+    Mais vous avez quand même le droit de continuer l'atelier !
 
 </div>
 
@@ -49,8 +47,9 @@ T'as perdu !
 
 </div>
 
+<div class='texte'  *ngIf="showReponses"><p>Etes-vous capable de retrouver les logos dans l'ordre ?</p></div>
 <div class="cadenas" *ngIf="showReponses"> 
-  <div *ngFor="let icon of iconsList; let id = index" class="choix" id="{{icon}}" (click)="unlock(icon, id)">
+  <div class='listeicons' *ngFor="let icon of iconsList; let id = index" class="choix" id="{{icon}}" (click)="unlock(icon, id)">
       <fa-icon [icon]="['fas', icon]" size="3x" ></fa-icon>
   </div>
 </div>
