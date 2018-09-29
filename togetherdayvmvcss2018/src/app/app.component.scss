@@ -1,4 +1,9 @@
 
+body {
+
+
+}
+
 div{
     // color: green;
 }
@@ -63,13 +68,33 @@ div{
 
 .cadenas  {
     display: flex;
-    width: 600px;
-    margin-left: 1s0px;
-
+   align-items: center;
+   justify-content: center;
+   /* You can set flex-wrap and
+      flex-direction individually */
+   flex-direction: row;
+   flex-wrap: wrap;
+   /* Or do it all in one line
+     with flex flow */
+   flex-flow: row wrap;
+   /* tweak where items line
+      up on the row
+      valid values are: flex-start,
+      flex-end, space-between,
+      space-around, stretch */
+   align-content: flex-end;
+    max-width: 40%;
+    margin-left: 5px;
+    margin-top: 5px;
+    fa-icon{
+        color: red;
+        margin-left: 30px;
+    }
+    
     .choix  {
         flex: 1 0;
-        flex-direction: column;
-        width: 20px;
+       // flex-direction: row;
+        
     }
 
     .icone-selected {
@@ -106,3 +131,4 @@ fa-icon{
     color: red;
     margin-left: 10px;
 }
+
