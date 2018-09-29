@@ -1,8 +1,54 @@
+#main{
+    overflow : hidden !important ;
+    background-color: aqua ;
+    width: 100%;
+    height: 100%;
+}
 
-body {
-
+.buttoncompteur{
+    height: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    .countDown {
+        height: 100%;
+        margin-bottom: 0%;
+        p {
+            font-family: Verdana;
+            font-weight: bold;
+            font-size: 2em;
+            vertical-align: middle;
+            margin-top: 0px;
+        }
+    }
+    
 
 }
+
+
+#intitule {
+
+    text-align: justify;
+    margin-left: auto ;
+    margin-right: auto ;
+
+    width: 30%;
+    height: 20%;
+    p{
+        font-family: Verdana;
+        margin-top: 0px;
+        margin-bottom: 5px;
+    }
+    div {
+        width: 100%;
+        margin-left: auto ;
+        margin-right: auto ;
+
+
+    }
+    margin-top: 20px;
+
+}
+
 
 div{
     // color: green;
@@ -20,8 +66,9 @@ div{
     .questions {
      //   float: left;
         
-        h2 {
-            margin-bottom: 30px;
+        p {
+            margin-bottom: 10px;
+            margin-top: 0px;
         }
     }
 
@@ -103,32 +150,17 @@ div{
     }
 }
 
-.imgcoffre {
+.tapelareponse {
+    margin-top: 2%;
 
+    fa-icon{
+        color: green;
+        margin-left: 10px;
+    }
 }
 
-#intitule {
-    text-align: center;
-    margin-left: auto ;
-    margin-right: auto ;
-
-    width: 500px;
-    p{
-        margin-bottom: 20px;
-    }
-    div {
-        width: 500px;
-        margin-left: auto ;
-        margin-right: auto ;
-
-
-    }
-    margin-top: 50px;
-
-}
 
 fa-icon{
     color: red;
     margin-left: 10px;
 }
-
