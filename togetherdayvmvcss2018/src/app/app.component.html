@@ -52,16 +52,27 @@
   </div>
 
   <div class='texte'  *ngIf="showReponses"><p>Etes-vous capable de retrouver les logos dans l'ordre ?</p></div>
-  <div class="cadenas" *ngIf="showReponses"> 
-    <div class='listeicons' *ngFor="let icon of iconsList; let id = index" class="choix" id="{{icon}}" (click)="unlock(icon, id)">
-        <fa-icon [icon]="['fas', icon]" size="3x" ></fa-icon>
+ 
+  <div class='partiereponse'>
+    <div class="cadenas" *ngIf="showReponses"> 
+      <div class='listeicons' *ngFor="let icon of iconsList; let id = index" class="choix" id="{{icon}}" (click)="unlock(icon, id)">
+          <fa-icon [icon]="['fas', icon]" size="3x" ></fa-icon>
+      </div>
     </div>
+    <div class="coffre"> <!--  *ngIf="showVideo"-->
+      <video width="600px" height="400px">
+        <source src="assets/videos/coffre.mp4" type="video/mp4" />
+        Ici l'alternative à la vidéo : un lien de téléchargement, un message, etc.
+      </video>
+    </div>
+
   </div>
 
-  <div class="cadenas" *ngIf="showReponses">
+  <div class="cadenas tapelareponse" *ngIf="showReponses">
     <div *ngFor="let entryNb of selectedIcons.keys()" id="entree{{entryNb}}">
         <fa-icon [icon]="['fas', this.selectedIcons[entryNb]]" size="3x" ></fa-icon>
     </div>
 
   </div>
+
 </div>

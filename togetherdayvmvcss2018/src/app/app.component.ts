@@ -106,7 +106,7 @@ export class AppComponent {
   public iconsList = ['coffee', 'music', 'fire',
                       'key', 'camera', 'truck',
                       'thermometer', 'utensil-spoon', 'umbrella',
-                      'trophy', 'wrench', 'hand-spock', 'heart', 'rocket',
+                      'trophy', 'wrench', 'cloud', 'heart', 'rocket',
                       'hand-spock', 'futbol', 'feather',
                       'fish', 'grin-tongue-wink', 'shower',
                       'cut', 'code-branch', 'fire-extinguisher', 'concierge-bell'];

@@ -1,12 +1,16 @@
 #main{
     overflow : hidden !important ;
-    background-color: aqua ;
+   // background-image: url('../assets/images/wallpaper.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
     height: 100%;
-}
+  
+
 
 .buttoncompteur{
-    height: 5%;
+    
+    height: 5%;;
     margin-top: 2%;
     margin-bottom: 2%;
     .countDown {
@@ -24,6 +28,11 @@
 
 }
 
+p{
+    font-family: Verdana;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
 
 #intitule {
 
@@ -33,11 +42,7 @@
 
     width: 30%;
     height: 20%;
-    p{
-        font-family: Verdana;
-        margin-top: 0px;
-        margin-bottom: 5px;
-    }
+
     div {
         width: 100%;
         margin-left: auto ;
@@ -152,15 +157,23 @@ div{
 
 .tapelareponse {
     margin-top: 2%;
-
+    margin-left : 15%;
     fa-icon{
         color: green;
         margin-left: 10px;
     }
 }
 
+.partiereponse {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+ }
 
 fa-icon{
     color: red;
     margin-left: 10px;
+}
 }

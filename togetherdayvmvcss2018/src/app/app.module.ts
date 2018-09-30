@@ -40,6 +40,7 @@ library.add(icons.faRocket);
 library.add(icons.faTrophy);
 library.add(icons.faTruck);
 library.add(icons.faConciergeBell);
+library.add(icons.faCloud);
 
 @NgModule({
   declarations: [
