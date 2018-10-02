@@ -207,7 +207,6 @@ counterNextValue() {
       if (this.reponsesPropose.toString() === this.bonnesReponses.toString()) {
         console.log('gagne');
         this.isVictoire = true;
-
       } else {
         console.log('perdu');
         this.shuffleQuestionsReponses();

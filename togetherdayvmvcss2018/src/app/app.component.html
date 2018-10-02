@@ -3,7 +3,11 @@
 
   <!--The content below is only a placeholder and can be replaced.-->
   <div id="intitule">
-    <div>
+   <!--   <video width="420px" height="auto">
+          <source src="assets/videos/coffre.mp4" type="video/mp4" />
+          Ici l'alternative à la vidéo : un lien de téléchargement, un message, etc.
+        </video> -->
+    <div> 
     <p>Afin de savoir si vous êtes à la hauteur de la tâche, nous avons caché les
     spécifications du projet dans un coffre.</p>
     <p>Trouvez les réponses aux questions posées et prouvez que vous êtes digne des Avengers !</p>
@@ -58,12 +62,6 @@
       <div class='listeicons' *ngFor="let icon of iconsList; let id = index" class="choix" id="{{icon}}" (click)="unlock(icon, id)">
           <fa-icon [icon]="['fas', icon]" size="3x" ></fa-icon>
       </div>
-    </div>
-    <div class="coffre"> <!--  *ngIf="showVideo"-->
-      <video width="600px" height="400px">
-        <source src="assets/videos/coffre.mp4" type="video/mp4" />
-        Ici l'alternative à la vidéo : un lien de téléchargement, un message, etc.
-      </video>
     </div>
 
   </div>
