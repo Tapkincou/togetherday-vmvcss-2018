@@ -5,26 +5,54 @@
     background-size: cover;
     width: 100%;
     height: 100%;
+    z-index: 6;
 
-.buttoncompteur{
-    
-    height: 5%;;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    .countDown {
-        height: 100%;
-        margin-bottom: 0%;
-        p {
-            font-family: Verdana;
-            font-weight: bold;
-            font-size: 2em;
-            vertical-align: middle;
-            margin-top: 0px;
+    .onTop{
+        z-index: 12;
+
+        
+        .buttoncompteur{
+            
+            height: 5%;;
+            margin-top: 2%;
+            margin-bottom: 2%;
+            .countDown {
+                height: 100%;
+                margin-bottom: 0%;
+                p {
+                    font-family: Verdana;
+                    font-weight: bold;
+                    font-size: 2em;
+                    vertical-align: middle;
+                    margin-top: 0px;
+                }
+            }
+        }
+
+
+        #intitule {
+            z-index: 2;
+            text-align: justify;
+            margin-left: auto ;
+            margin-right: auto ;
+
+            width: 30%;
+            height: 20%;
+
+            div {
+                width: 100%;
+                margin-left: auto ;
+                margin-right: auto ;
+
+
+            }
+            margin-top: 20px;
+
         }
     }
-    
 
-}
+
+
 
 p{
     font-family: Verdana;
@@ -32,25 +60,6 @@ p{
     margin-bottom: 5px;
 }
 
-#intitule {
-    z-index: 2;
-    text-align: justify;
-    margin-left: auto ;
-    margin-right: auto ;
-
-    width: 30%;
-    height: 20%;
-
-    div {
-        width: 100%;
-        margin-left: auto ;
-        margin-right: auto ;
-
-
-    }
-    margin-top: 20px;
-
-}
 
 
 div{
@@ -62,6 +71,7 @@ div{
 }
 
 .quizz {
+    z-index: 12;
     margin-left: 100px;
   //  overflow: hidden;
    // margin: 0px 100px 0px 100px;
@@ -153,7 +163,12 @@ div{
     }
 }
 
+.texte{
+    z-index: 12;
+}
+
 .tapelareponse {
+    z-index: 12;
     margin-top: 2%;
     margin-left : 15%;
     fa-icon{
@@ -163,7 +178,7 @@ div{
 }
 
 .partiereponse {
-
+    z-index: 12;
     display: flex;
     flex-direction: row;
     align-items: center;

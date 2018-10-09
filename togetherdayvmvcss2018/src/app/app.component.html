@@ -1,6 +1,6 @@
 <div id="main">
 
-
+  <div id="onTop">
   <!--The content below is only a placeholder and can be replaced.-->
   <div id="intitule">
    <!--   <video width="420px" height="auto">
@@ -34,12 +34,10 @@
 
 
   <div class="victoire" *ngIf="isVictoire">
-
       T'as gagné !
-      
-      
-      
-      </div>
+  </div>
+
+  </div>
 
   <div class="quizz" *ngIf="showQuestions" >
     <div class="questions">
@@ -50,27 +48,24 @@
         <fa-icon [icon]="['fas', iconsList[reponse.id]]" size="3x"></fa-icon><div>{{reponse.texte}}</div>
       </li>
     </ul>
-
     <button class="next-btn" (click)="increaseIndex()" mat-raised-button >Question suivante</button>
-
   </div>
 
+
   <div class='texte'  *ngIf="showReponses"><p>Etes-vous capable de retrouver les logos dans l'ordre ?</p></div>
- 
+  
   <div class='partiereponse'>
     <div class="cadenas" *ngIf="showReponses"> 
       <div class='listeicons' *ngFor="let icon of iconsList; let id = index" class="choix" id="{{icon}}" (click)="unlock(icon, id)">
           <fa-icon [icon]="['fas', icon]" size="3x" ></fa-icon>
       </div>
     </div>
-
   </div>
 
   <div class="cadenas tapelareponse" *ngIf="showReponses">
     <div *ngFor="let entryNb of selectedIcons.keys()" id="entree{{entryNb}}">
         <fa-icon [icon]="['fas', this.selectedIcons[entryNb]]" size="3x" ></fa-icon>
     </div>
-
   </div>
 
 </div>
