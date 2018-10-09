@@ -1,42 +1,46 @@
 <div id="main">
 
-  <div id="onTop">
-  <!--The content below is only a placeholder and can be replaced.-->
-  <div id="intitule">
-   <!--   <video width="420px" height="auto">
-          <source src="assets/videos/coffre.mp4" type="video/mp4" />
-          Ici l'alternative à la vidéo : un lien de téléchargement, un message, etc.
-        </video> -->
-    <div> 
-    <p>Afin de savoir si vous êtes à la hauteur de la tâche, nous avons caché les
-    spécifications du projet dans un coffre.</p>
-    <p>Trouvez les réponses aux questions posées et prouvez que vous êtes digne des Avengers !</p>
-    <p>La force seule ne sert à rien sans la connaissance et la mémoire ;)</p>
-    </div>
-    
+
+  <div class="countDown" style="text-align:center" *ngIf="!isVictoire">
+    <p>{{countDown | async}}</p>
   </div>
 
+  <div id="onTop" *ngIf="!showQuestions && !showReponses">
+    <!--The content below is only a placeholder and can be replaced.-->
+    <div id="intitule">
+    <!--   <video width="420px" height="auto">
+            <source src="assets/videos/coffre.mp4" type="video/mp4" />
+            Ici l'alternative à la vidéo : un lien de téléchargement, un message, etc.
+          </video> -->
+      <div> 
+      <p>Afin de savoir si vous êtes à la hauteur de la tâche, nous avons caché les
+      spécifications du projet dans un coffre.</p>
+      <p>Trouvez les réponses aux questions posées et prouvez que vous êtes digne des Avengers !</p>
+      <p>La force seule ne sert à rien sans la connaissance et la mémoire ;)</p>
+      </div>
+      
+    </div>
 
-  <div class="buttoncompteur" style="text-align:center" *ngIf="!isVictoire">
-    <div *ngIf="showButton" >
-      <button  mat-raised-button (click)="begin(true)">Commencer</button>
+
+    <div class="buttoncompteur" style="text-align:center" *ngIf="!isVictoire">
+      <div *ngIf="showButton" >
+        <button  mat-raised-button (click)="begin(true)">Commencer</button>
+      </div>
+
     </div>
-    <div class="countDown" style="text-align:center" *ngIf="!isVictoire">
-      <p>{{countDown | async}}</p>
-    </div>
+
   </div>
+
 
   <div class="TimesUp" *ngIf="count.getValue() ==  0">
-      Ah! vous n'avez pas réussi avant la fin du chrono, c'est vraiment dommage :(
-      Mais vous avez quand même le droit de continuer l'atelier !
+    Ah! vous n'avez pas réussi avant la fin du chrono, c'est vraiment dommage :(
+    Mais vous avez quand même le droit de continuer l'atelier !
 
   </div>
 
 
   <div class="victoire" *ngIf="isVictoire">
       T'as gagné !
-  </div>
-
   </div>
 
   <div class="quizz" *ngIf="showQuestions" >
@@ -68,4 +72,10 @@
     </div>
   </div>
 
+  <footer class="coffre" >
+      <video width="100%" height="auto">
+        <source src="assets/videos/coffre.mp4" type="video/mp4" />
+        Ici l'alternative à la vidéo : un lien de téléchargement, un message, etc.
+      </video> 
+  </footer>
 </div>

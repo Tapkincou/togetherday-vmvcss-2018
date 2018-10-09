@@ -215,7 +215,7 @@ counterNextValue() {
 
     }
 
-    console.log(this.combinaison);
+    //console.log(this.combinaison);
   }
 
 }
