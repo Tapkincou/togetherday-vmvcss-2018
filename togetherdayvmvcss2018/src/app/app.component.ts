@@ -115,7 +115,7 @@ export class AppComponent {
   constructor() {
     this.shuffleQuestionsReponses();
     this.showButton = true;
-    this.countStartValue = 1 * 20;
+    this.countStartValue = 10 * 60;
     this.count = new BehaviorSubject<number>(this.countStartValue);
     this.count$ = this.count.asObservable();
     let subscription = this.count$.subscribe(c => {
@@ -215,7 +215,7 @@ counterNextValue() {
 
     }
 
-    //console.log(this.combinaison);
+    console.log(this.combinaison);
   }
 
 }

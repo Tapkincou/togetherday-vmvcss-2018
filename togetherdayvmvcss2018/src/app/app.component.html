@@ -72,10 +72,14 @@
     </div>
   </div>
 
-  <footer class="coffre" >
-      <video width="100%" height="auto">
+  <footer class="coffre"  >
+      <video  *ngIf="!isVictoire" width="100%" height="auto">
         <source src="assets/videos/coffre.mp4" type="video/mp4" />
-        Ici l'alternative à la vidéo : un lien de téléchargement, un message, etc.
+       
       </video> 
+      <video  *ngIf="isVictoire" autoplay width="100%" height="auto">
+          <source src="assets/videos/coffre.mp4" type="video/mp4" />
+         
+        </video> 
   </footer>
 </div>
