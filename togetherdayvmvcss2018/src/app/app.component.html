@@ -67,14 +67,14 @@
   <div class='partiereponse'>
     <div class="cadenas" *ngIf="showReponses && !isVictoire"> 
       <div class='listeicons' *ngFor="let icon of iconsList; let id = index" class="choix" id="{{icon}}" (click)="unlock(icon, id)">
-          <fa-icon [icon]="['fas', icon]" size="3s" ></fa-icon>
+          <fa-icon [icon]="['fas', icon]" size="4s" ></fa-icon>
       </div>
     </div>
   </div>
 
   <div class="cadenas tapelareponse" *ngIf="showReponses && !isVictoire">
     <div *ngFor="let entryNb of selectedIcons.keys()" id="entree{{entryNb}}">
-        <fa-icon [icon]="['fas', this.selectedIcons[entryNb]]" size="3s" ></fa-icon>
+        <fa-icon [icon]="['fas', this.selectedIcons[entryNb]]" size="4s" ></fa-icon>
     </div>
   </div>
 
