@@ -1,4 +1,5 @@
 #main{
+    font-size: 100%;
     overflow : hidden !important ;
    // background-image: url('../assets/images/wallpaper.jpg') ;
     background-repeat: no-repeat;
@@ -17,8 +18,7 @@
         display: inline-block;
         p {
             font-weight: bold;
-            font-size: 2em;
-
+            
         }
     }
 
@@ -81,20 +81,30 @@ div{
     // color: green;
 }
 .btn{
-    width: 200px;
-    height: 50px;
+    width: 15%;
+    height: 5%;
 }
-
+.next-btn {
+    position: absolute;
+    left: 60%;
+    top: 25%;
+}
 .quizz {
     z-index: 18;
-    margin-left: 100px;
+    //width: 25%;
+    height: 40%;
+    margin-left: 5%;
+
   //  overflow: hidden;
    // margin: 0px 100px 0px 100px;
+
+
 
     .questions {
      //   float: left;
         
         p {
+           font-weight: bold;
             margin-bottom: 10px;
             margin-top: 0px;
         }
@@ -142,6 +152,7 @@ div{
 }
 
 .cadenas  {
+    height: 25%;
    display: flex;
    align-items: center;
    justify-content: center;
@@ -183,9 +194,13 @@ div{
 }
 
 .tapelareponse {
+    height: 5%;
     z-index: 12;
     margin-top: 2%;
-    margin-left : 15%;
+    margin-left: 30%;
+
+
+
     fa-icon{
         color: green;
         margin-left: 10px;
@@ -207,10 +222,13 @@ fa-icon{
 
 
 .coffre {
+    z-index: 18;
+    width: 33.3%;
+    height: auto;
     position: absolute;
-    left: 30%;
-    width: 40%;
-    bottom: 5px;
+    top:25%;
+    left:33.3%;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
  }
 
 }

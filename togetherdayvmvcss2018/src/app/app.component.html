@@ -31,6 +31,15 @@
 
   </div>
 
+  <div class="coffre" *ngIf="isVictoire"  >
+    
+    <div class='texte'  *ngIf="isVictoire"><p>Bravo tu as réussi la première épreuve !</p></div>
+    <video  autoplay width="100%" height="auto">
+        <source src="assets/videos/coffre.mp4" type="video/mp4" />
+       
+      </video> 
+  </div>
+
 
   <div class="TimesUp" *ngIf="count.getValue() ==  0">
     Ah! vous n'avez pas réussi avant la fin du chrono, c'est vraiment dommage :(
@@ -38,48 +47,36 @@
 
   </div>
 
-
-  <div class="victoire" *ngIf="isVictoire">
-      T'as gagné !
-  </div>
-
-  <div class="quizz" *ngIf="showQuestions" >
+  <div class="quizz" *ngIf="showQuestions && !isVictoire" >
     <div class="questions">
         <p>{{questions[currentIndex].texte}}</p>
     </div>
     <ul class="reponses">
       <li *ngFor="let reponse of questions[currentIndex].reponses">
-        <fa-icon [icon]="['fas', iconsList[reponse.id]]" size="3x"></fa-icon><div>{{reponse.texte}}</div>
+        <fa-icon [icon]="['fas', iconsList[reponse.id]]" size="3s"></fa-icon><div>{{reponse.texte}}</div>
       </li>
     </ul>
-    <button class="next-btn" (click)="increaseIndex()" mat-raised-button >Question suivante</button>
+
+  </div>
+  <div class="next-btn" *ngIf="showQuestions && !isVictoire">
+    <button  (click)="increaseIndex()" mat-raised-button >Question suivante</button>
   </div>
 
-
-  <div class='texte'  *ngIf="showReponses"><p>Etes-vous capable de retrouver les logos dans l'ordre ?</p></div>
+  <div class='texte'  *ngIf="showReponses && !isVictoire"><p>Etes-vous capable de retrouver les logos dans l'ordre ?</p></div>
   
   <div class='partiereponse'>
-    <div class="cadenas" *ngIf="showReponses"> 
+    <div class="cadenas" *ngIf="showReponses && !isVictoire"> 
       <div class='listeicons' *ngFor="let icon of iconsList; let id = index" class="choix" id="{{icon}}" (click)="unlock(icon, id)">
-          <fa-icon [icon]="['fas', icon]" size="3x" ></fa-icon>
+          <fa-icon [icon]="['fas', icon]" size="3s" ></fa-icon>
       </div>
     </div>
   </div>
 
-  <div class="cadenas tapelareponse" *ngIf="showReponses">
+  <div class="cadenas tapelareponse" *ngIf="showReponses && !isVictoire">
     <div *ngFor="let entryNb of selectedIcons.keys()" id="entree{{entryNb}}">
-        <fa-icon [icon]="['fas', this.selectedIcons[entryNb]]" size="3x" ></fa-icon>
+        <fa-icon [icon]="['fas', this.selectedIcons[entryNb]]" size="3s" ></fa-icon>
     </div>
   </div>
 
-  <footer class="coffre"  >
-      <video  *ngIf="!isVictoire" width="100%" height="auto">
-        <source src="assets/videos/coffre.mp4" type="video/mp4" />
-       
-      </video> 
-      <video  *ngIf="isVictoire" autoplay width="100%" height="auto">
-          <source src="assets/videos/coffre.mp4" type="video/mp4" />
-         
-        </video> 
-  </footer>
+
 </div>
