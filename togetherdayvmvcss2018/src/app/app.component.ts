@@ -105,7 +105,9 @@ export class AppComponent {
   public bonnesReponsesOrdreInitial = [1, 3, 7, 9, 13, 16, 18, 21];
   public iconeSelected = false;
   public currentIndex;
+  public showTimer = false;
   public showQuestions = false;
+  public showFailMessage  = false;
   public showReponses = false;
   public title = 'app';
   public countDown;
@@ -125,7 +127,7 @@ export class AppComponent {
   constructor() {
     this.shuffleQuestionsReponses();
     this.showButton = true;
-    this.countStartValue = 10 * 60;
+    this.countStartValue = 7 * 60;
     this.count = new BehaviorSubject<number>(this.countStartValue);
     this.count$ = this.count.asObservable();
     let subscription = this.count$.subscribe(c => {
@@ -142,6 +144,7 @@ export class AppComponent {
   this.showButton = false;
   this.showQuestions = true;
   this.showReponses = false;
+  this.showTimer = true;
   if ( withTimer === true) {
     this.goTimer();
   }
@@ -220,13 +223,14 @@ counterNextValue() {
         this.isVictoire = true;
       } else {
         console.log('perdu');
+        this.showFailMessage = true;
         this.shuffleQuestionsReponses();
         this.begin();
       }
 
     }
 
-    console.log(this.combinaison);
+    // console.log(this.combinaison);
   }
 
 }

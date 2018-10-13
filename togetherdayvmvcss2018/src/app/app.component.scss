@@ -1,22 +1,39 @@
-#main{
-    font-size: 100%;
+#avengers {
     overflow : hidden !important ;
-   // background-image: url('../assets/images/wallpaper.jpg') ;
+    position: absolute;
+
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
     height: 100%;
-    z-index: 6;
+    background-image: url('../assets/images/avengers.png') ;
+    z-index: 7;
+}
+
+#main{
+    background-image: url('../assets/images/avengers.png') ;
+
+    font-size: 100%;
+    overflow : hidden !important ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    z-index: 12;
 
     .countDown {
-        height: 10%;
+        background-color: white;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+        border: 1px solid black;
+        height: 41px;
         vertical-align: middle;
-        width: 5%;
-        margin-left: 45%;
+        width: 13%;
+        margin-left: 43.5%;
         margin-top: 1%;
         margin-right: auto;
         display: inline-block;
         p {
+            padding-top: 11px;
             font-weight: bold;
             
         }
@@ -80,20 +97,20 @@ p{
 div{
     // color: green;
 }
-.btn{
-    width: 15%;
-    height: 5%;
-}
+
 .next-btn {
-    position: absolute;
-    left: 60%;
-    top: 25%;
+    width: 15%;
+    height: 9%;
+    margin-left: 43.5%;
 }
+
 .quizz {
     z-index: 18;
     //width: 25%;
-    height: 40%;
+    height: 65%;
     margin-left: 5%;
+    margin-top: 6%;
+
 
   //  overflow: hidden;
    // margin: 0px 100px 0px 100px;
@@ -102,7 +119,7 @@ div{
 
     .questions {
      //   float: left;
-        
+     height: 5%;
         p {
            font-weight: bold;
             margin-bottom: 10px;
@@ -112,7 +129,8 @@ div{
 
 
     .reponses {
-
+        margin-top: 5%;
+        margin-left: 20%;
      //  display: flex;
        // float: left;
      //   width: 400px;
@@ -169,9 +187,10 @@ div{
       flex-end, space-between,
       space-around, stretch */
    align-content: flex-end;
-    max-width: 40%;
+    width: 59%;
     margin-left: 5px;
     margin-top: 5px;
+    margin-bottom: 25px;
     fa-icon{
         color: red;
         margin-left: 40px;
@@ -180,6 +199,7 @@ div{
     
     .choix  {
         flex: 1 0;
+        margin: 20px 30px 0 0;
        // flex-direction: row;
         
     }
@@ -190,15 +210,11 @@ div{
     }
 }
 
-.texte{
-    z-index: 12;
-}
-
 .tapelareponse {
     height: 5%;
     z-index: 12;
-    margin-top: 2%;
-    margin-left: 30%;
+    margin-top: 3%;
+    margin-left: 22%;
 
 
 
@@ -209,6 +225,7 @@ div{
 }
 
 .partiereponse {
+    margin-top: 5%;
     z-index: 12;
     display: flex;
     flex-direction: row;
@@ -218,18 +235,46 @@ div{
 
 fa-icon{
     color: red;
-    margin-left: 10px;
+
 }
 
 
 .coffre {
+
+     .texte{
+        text-align: center;
+        z-index: 12;
+    }
     z-index: 18;
-    width: 33.3%;
+    width: 60%;
     height: auto;
     position: absolute;
-    top:25%;
-    left:33.3%;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    top:10%;
+    left:20%;
+    //box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
  }
+
+ .texte{
+    font-weight: bold;
+}
+
+.TimesUp{
+    margin-left: 5%;
+}
+
+.texte-cadenas{
+    margin-top: 2%;
+    margin-left: 5%; 
+}
+
+.titre-catenas{
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.failMessage{
+    color: red;
+
+}
 
 }

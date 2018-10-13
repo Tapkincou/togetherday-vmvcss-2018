@@ -1,9 +1,12 @@
+
 <div id="main">
 
 
-  <div class="countDown" style="text-align:center" *ngIf="!isVictoire">
+  <div class="countDown" style="text-align:center" *ngIf="!isVictoire && showTimer">
     <p>{{countDown | async}}</p>
   </div>
+
+
 
   <div id="onTop" *ngIf="!showQuestions && !showReponses">
     <!--The content below is only a placeholder and can be replaced.-->
@@ -41,19 +44,25 @@
   </div>
 
 
-  <div class="TimesUp" *ngIf="count.getValue() ==  0">
-    Ah! vous n'avez pas réussi avant la fin du chrono, c'est vraiment dommage :(
-    Mais vous avez quand même le droit de continuer l'atelier !
-
+  <div class="TimesUp" *ngIf="count.getValue() ==  0"><p class='texte' >
+     Ah! vous n'avez pas réussi avant la fin du chrono, c'est vraiment dommage :(
+     Mais vous avez quand même le droit de continuer l'atelier !
+   </p>
   </div>
 
   <div class="quizz" *ngIf="showQuestions && !isVictoire" >
+
+      <div class="failMessage" *ngIf="showFailMessage ">
+          <p class="texte">Raté ! Vous êtes bon pour recommencer ( attention nous avons tout remélangé ;-) )</p>
+      
+        </div>
+
     <div class="questions">
         <p>{{questions[currentIndex].texte}}</p>
     </div>
     <ul class="reponses">
       <li *ngFor="let reponse of questions[currentIndex].reponses">
-        <fa-icon [icon]="['fas', iconsList[reponse.id]]" size="3s"></fa-icon><div>{{reponse.texte}}</div>
+        <fa-icon [icon]="['fas', iconsList[reponse.id]]" size="3x"></fa-icon><div>{{reponse.texte}}</div>
       </li>
     </ul>
 
@@ -61,20 +70,19 @@
   <div class="next-btn" *ngIf="showQuestions && !isVictoire">
     <button  (click)="increaseIndex()" mat-raised-button >Question suivante</button>
   </div>
-
-  <div class='texte'  *ngIf="showReponses && !isVictoire"><p>Etes-vous capable de retrouver les logos dans l'ordre ?</p></div>
+  <div class="titre-catenas" *ngIf="showReponses && !isVictoire"><p class='texte texte-cadenas' >Etes-vous capable de retrouver les logos dans l'ordre ?</p></div>
   
   <div class='partiereponse'>
     <div class="cadenas" *ngIf="showReponses && !isVictoire"> 
       <div class='listeicons' *ngFor="let icon of iconsList; let id = index" class="choix" id="{{icon}}" (click)="unlock(icon, id)">
-          <fa-icon [icon]="['fas', icon]" size="4s" ></fa-icon>
+          <fa-icon [icon]="['fas', icon]" size="3x" ></fa-icon>
       </div>
     </div>
   </div>
 
   <div class="cadenas tapelareponse" *ngIf="showReponses && !isVictoire">
     <div *ngFor="let entryNb of selectedIcons.keys()" id="entree{{entryNb}}">
-        <fa-icon [icon]="['fas', this.selectedIcons[entryNb]]" size="4s" ></fa-icon>
+        <fa-icon [icon]="['fas', this.selectedIcons[entryNb]]" size="3x" ></fa-icon>
     </div>
   </div>
 
