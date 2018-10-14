@@ -36,9 +36,9 @@
 
   <div class="coffre" *ngIf="isVictoire"  >
     
-    <div class='texte'  *ngIf="isVictoire"><p>Bravo tu as réussi la première épreuve !</p></div>
-    <video  autoplay width="100%" height="auto">
-        <source src="assets/videos/coffre.webm" type="video/mp4" />
+    <div class='texte texte-victoire'  *ngIf="isVictoire"><p>Bravo tu as réussi la première épreuve !</p></div>
+    <video  autoplay muted width="100%" height="auto">
+        <source src="assets/videos/coffre.webm" type="video/webm" />
        
       </video> 
   </div>
@@ -53,7 +53,7 @@
   <div class="quizz" *ngIf="showQuestions && !isVictoire" >
 
       <div class="failMessage" *ngIf="showFailMessage ">
-          <p class="texte">Raté ! Vous êtes bon pour recommencer ( attention nous avons tout remélangé ;-) )</p>
+          <p class="texte">Raté ! Vous êtes bons pour recommencer ( attention nous avons tout remélangé ;-) )</p>
       
         </div>
 
